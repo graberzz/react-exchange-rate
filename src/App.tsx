@@ -16,16 +16,15 @@ const App = () => {
   const [baseTo, setBaseTo] = useState('RUB')
 
   useEffect(() => {
-    const nextvalueTo = convert(valueFrom, baseFrom, baseTo, rate)
-    setValueTo(nextvalueTo)
-  }, [valueFrom, baseFrom, baseTo])
-
-  useEffect(() => {
-    const nextvalueFrom = convert(valueTo, baseTo, baseFrom, rate)
-    setValueFrom(nextvalueFrom)
+    setValueFrom(convert(valueTo, baseTo, baseFrom, rate))
   }, [valueTo])
 
+  useEffect(() => {
+    setValueTo(convert(valueFrom, baseFrom, baseTo, rate))
+  }, [baseFrom, baseTo])
+
   const [rate, setRate] = useState<Rate>()
+
   useEffect(() => {
     async function fetchRate() {
       const rate = await getExchangeRate('USD')
@@ -38,6 +37,11 @@ const App = () => {
 
     fetchRate()
   }, [])
+
+  function handleValueFromChange(valueFrom: number) {
+    setValueFrom(valueFrom)
+    setValueTo(convert(valueFrom, baseFrom, baseTo, rate))
+  }
 
   const baseOptions = Object.keys(rate?.rates ?? {})
 
@@ -62,7 +66,7 @@ const App = () => {
               <Box mb={2}>
                 <CurrencyInput
                   value={valueFrom}
-                  onValueChange={setValueFrom}
+                  onValueChange={handleValueFromChange}
                   base={baseFrom}
                   onBaseChange={setBaseFrom}
                   baseOptions={baseOptions}
