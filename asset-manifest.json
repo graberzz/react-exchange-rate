@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-exchange-rate/static/css/main.f0a6e92f.chunk.css",
-    "main.js": "/react-exchange-rate/static/js/main.52d7102f.chunk.js",
-    "main.js.map": "/react-exchange-rate/static/js/main.52d7102f.chunk.js.map",
+    "main.js": "/react-exchange-rate/static/js/main.c5c6ebf1.chunk.js",
+    "main.js.map": "/react-exchange-rate/static/js/main.c5c6ebf1.chunk.js.map",
     "runtime-main.js": "/react-exchange-rate/static/js/runtime-main.99d16db6.js",
     "runtime-main.js.map": "/react-exchange-rate/static/js/runtime-main.99d16db6.js.map",
     "static/js/2.3d8f7ed8.chunk.js": "/react-exchange-rate/static/js/2.3d8f7ed8.chunk.js",
     "static/js/2.3d8f7ed8.chunk.js.map": "/react-exchange-rate/static/js/2.3d8f7ed8.chunk.js.map",
     "index.html": "/react-exchange-rate/index.html",
-    "precache-manifest.a8337e7858015bb196d3b4d7fa65e2eb.js": "/react-exchange-rate/precache-manifest.a8337e7858015bb196d3b4d7fa65e2eb.js",
+    "precache-manifest.50c6fe771ebeb7994ddb3102f34bbd32.js": "/react-exchange-rate/precache-manifest.50c6fe771ebeb7994ddb3102f34bbd32.js",
     "service-worker.js": "/react-exchange-rate/service-worker.js",
     "static/css/main.f0a6e92f.chunk.css.map": "/react-exchange-rate/static/css/main.f0a6e92f.chunk.css.map",
     "static/js/2.3d8f7ed8.chunk.js.LICENSE.txt": "/react-exchange-rate/static/js/2.3d8f7ed8.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.99d16db6.js",
     "static/js/2.3d8f7ed8.chunk.js",
     "static/css/main.f0a6e92f.chunk.css",
-    "static/js/main.52d7102f.chunk.js"
+    "static/js/main.c5c6ebf1.chunk.js"
   ]
 }
