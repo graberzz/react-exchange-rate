@@ -2,7 +2,7 @@
   "name": "exchange-rate",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://graberzz.github.io/exchange-rate",
+  "homepage": "https://graberzz.github.io/react-exchange-rate",
   "dependencies": {
     "@devexpress/dx-react-chart": "^2.4.0",
     "@devexpress/dx-react-chart-material-ui": "^2.4.0",
