@@ -9,7 +9,7 @@ import {
 } from '@devexpress/dx-react-chart-material-ui'
 import { EventTracker } from '@devexpress/dx-react-chart'
 import { DateTime } from 'luxon'
-import { getExchangeRateHistory, RateHistory } from './api'
+import { getExchangeRateHistory, RateHistory } from '../api'
 
 interface ChartData {
   date: string

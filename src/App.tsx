@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Box, CircularProgress } from '@material-ui/core'
-import CurrencyInput from './CurrencyInput'
-import CurrencyChart from './CurrencyChart'
+import CurrencyInput from './components/CurrencyInput'
+import CurrencyChart from './components/CurrencyChart'
 import { getExchangeRate, Rate } from './api'
 import { convert } from './utils'
-import './App.css'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
