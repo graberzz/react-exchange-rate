@@ -7,42 +7,29 @@ import { convert } from './utils'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
+  const [value, setValue] = useState(1)
+  const [base, setBase] = useState('USD')
 
-  const [valueFrom, setValueFrom] = useState(1)
   const [baseFrom, setBaseFrom] = useState('USD')
-
-  const [valueTo, setValueTo] = useState(1)
   const [baseTo, setBaseTo] = useState('RUB')
 
-  useEffect(() => {
-    setValueFrom(convert(valueTo, baseTo, baseFrom, rate))
-  }, [valueTo])
-
-  useEffect(() => {
-    setValueTo(convert(valueFrom, baseFrom, baseTo, rate))
-  }, [baseFrom, baseTo])
-
   const [rate, setRate] = useState<Rate>()
-
   useEffect(() => {
     async function fetchRate() {
       const rate = await getExchangeRate('USD')
+
       setRate(rate)
-
-      setValueTo(convert(valueFrom, baseFrom, baseTo, rate))
-
       setIsLoading(false)
     }
 
     fetchRate()
   }, [])
 
-  function handleValueFromChange(valueFrom: number) {
-    setValueFrom(valueFrom)
-    setValueTo(convert(valueFrom, baseFrom, baseTo, rate))
-  }
-
   const baseOptions = Object.keys(rate?.rates ?? {})
+
+  const valueTo = baseTo === base ? value : convert(value, base, baseTo, rate)
+  const valueFrom =
+    baseFrom === base ? value : convert(value, base, baseFrom, rate)
 
   return (
     <Box
@@ -65,7 +52,10 @@ const App = () => {
               <Box mb={2}>
                 <CurrencyInput
                   value={valueFrom}
-                  onValueChange={handleValueFromChange}
+                  onValueChange={value => {
+                    setValue(value)
+                    setBase(baseFrom)
+                  }}
                   base={baseFrom}
                   onBaseChange={setBaseFrom}
                   baseOptions={baseOptions}
@@ -73,7 +63,10 @@ const App = () => {
               </Box>
               <CurrencyInput
                 value={valueTo}
-                onValueChange={setValueTo}
+                onValueChange={value => {
+                  setValue(value)
+                  // setBase(baseTo)
+                }}
                 base={baseTo}
                 onBaseChange={setBaseTo}
                 baseOptions={baseOptions}
