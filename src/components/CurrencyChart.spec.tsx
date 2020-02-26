@@ -1,7 +1,7 @@
 import React from 'react'
+import { render, wait, fireEvent } from '@testing-library/react'
 import CurrencyChart, { transformRateHistory } from './CurrencyChart'
 import * as API from '../api'
-import { render, wait, fireEvent } from '@testing-library/react'
 
 jest.mock('@devexpress/dx-react-chart-material-ui')
 
